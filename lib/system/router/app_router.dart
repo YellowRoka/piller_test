@@ -42,13 +42,13 @@ class AppRouter {
       GoRoute(
         path:        Routes.splashPage,
         builder:     (BuildContext context, GoRouterState state) => const FadeTransitionBuilder(child:SplashPage()),
-        //pageBuilder: (BuildContext context, GoRouterState state) => const FadeTransitionPage<void>(child:SplashPage()),
+        /* pageBuilder: (BuildContext context, GoRouterState state) => const FadeTransitionPage<void>(child:SplashPage()), */
         routes:      const <RouteBase>[],
       ),
 
       GoRoute(
         path:        Routes.loginPage,
-       // builder:     (BuildContext context, GoRouterState state) => const FadeTransitionBuilder(child:LoginPage()),
+       /* builder:     (BuildContext context, GoRouterState state) => const FadeTransitionBuilder(child:LoginPage()), */
         pageBuilder: (BuildContext context, GoRouterState state) => const FadeTransitionPage<void>(child: LoginPage()),
         routes:      const <RouteBase>[],
       ),
@@ -64,6 +64,13 @@ class AppRouter {
         path:        Routes.detailsPage,
         builder:     (BuildContext context, GoRouterState state) => const FadeTransitionBuilder(child:DetailsPage()),
         pageBuilder: (BuildContext context, GoRouterState state) => const FadeTransitionPage<void>(child: DetailsPage()),
+        routes:      const <RouteBase>[],
+      ),
+
+      GoRoute(
+        path:        Routes.errorPage,
+        builder:     (BuildContext context, GoRouterState state) => const FadeTransitionBuilder(child:ErrorPage()),
+        pageBuilder: (BuildContext context, GoRouterState state) => const FadeTransitionPage<void>(child: ErrorPage()),
         routes:      const <RouteBase>[],
       ),
 
