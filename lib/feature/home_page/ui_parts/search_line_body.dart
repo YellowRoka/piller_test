@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piller_test/feature/home_page/cubit/home_page_cubit.dart';
+import 'package:piller_test/feature/home_page/ui_parts/clear_search_button.dart';
 import 'package:piller_test/generated/locale_keys.g.dart';
 import 'package:piller_test/system/themes/app_colors.dart';
 
@@ -32,6 +33,10 @@ class SearchLineBody extends StatelessWidget {
             color: searcBorderColor,
             width: 2
           ),
+        ),
+        suffix: ClearSearchButton(
+          searchController: searchController,
+          searchFocusNode:  searchFocusNode
         ),
       ),
     );

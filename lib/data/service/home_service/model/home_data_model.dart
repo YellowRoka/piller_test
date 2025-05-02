@@ -18,6 +18,7 @@ abstract class HomeDataModel with _$HomeDataModel {
     required List<String>?         episode,
     required String?               url,
     required DateTime?             created,
+    bool?                          isFavorite,
 
   }) = _HomeDataModel;
 

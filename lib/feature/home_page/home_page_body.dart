@@ -29,11 +29,15 @@ class HomePageBody extends StatelessWidget {
             sliver: BlocBuilder<HomePageCubit, HomePageState>(
               builder: (context, state) {
                 return state.maybeWhen(
-                  orElse:      ()        => SliverWhiteLoader(),
-                  error:       (message) => SliverMessageCard( message: message, isRefeshEnabled: true ),
-                  dataError:   (errMsg)  => SliverMessageCard( message: errMsg ),
-                  missingData: ()        => SliverMessageCard( message: LocaleKeys.noData.tr(context: context) ),
-                  update:      (data)    => SliverDataListBuilder( data: data ),
+                  orElse:        ()        => SliverWhiteLoader(),
+                  error:         (message) => SliverMessageCard( message: message, isRefeshEnabled: true ),
+                  dataError:     (errMsg)  => SliverMessageCard( message: errMsg ),
+                  missingData:   ()        => SliverMessageCard( message: LocaleKeys.noData.tr(context: context) ),
+                  update:        (data, favs) => SliverDataListBuilder( data: data.results, favorites: favs ),
+                  showFavorites: (favs) =>
+                    ( favs.isEmpty )?
+                    (SliverMessageCard( message: LocaleKeys.emptyList.tr(context: context) )):
+                    (SliverDataListBuilder( data: favs, favorites: favs )),
                 );
               },
             ),

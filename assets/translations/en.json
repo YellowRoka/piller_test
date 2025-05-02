@@ -23,5 +23,6 @@
     "status"               : "Status:",
     "species"              : "Species:",
     "type"                 : "Type:",
-    "missingActiveUser"    : "Missing active user from system!"
+    "missingActiveUser"    : "Missing active user from system!",
+    "emptyList"            : "Empty list!"
 }

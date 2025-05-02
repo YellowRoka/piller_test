@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:piller_test/feature/home_page/ui_parts/clear_search_button.dart';
 import 'package:piller_test/feature/home_page/ui_parts/search_line_body.dart';
+import 'package:piller_test/feature/home_page/ui_parts/show_favorite_buton.dart';
 import 'package:piller_test/system/themes/app_themes.dart';
 
 class SliverSearchLine extends StatefulWidget implements PreferredSizeWidget {
@@ -56,11 +56,8 @@ class _SliverSearchLineState extends State<SliverSearchLine> {
             ),
             
             const SizedBox(width: 10),
-            
-            ClearSearchButton(
-              searchController: searchController,
-              searchFocusNode:  searchFocusNode
-            )
+
+            const ShowFavoriteButton(),
           ],
         ),
       ),

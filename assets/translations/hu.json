@@ -23,5 +23,6 @@
     "status"               : "Státus:",
     "species"              : "Faj:",
     "type"                 : "Típus:",
-    "missingActiveUser"    : "Nincs aktív felhasználó a rendszerben!"
+    "missingActiveUser"    : "Nincs aktív felhasználó a rendszerben!",
+    "emptyList"            : "Üres lista!"
 }
