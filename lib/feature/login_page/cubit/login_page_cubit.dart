@@ -15,12 +15,12 @@ class LoginPageCubit extends Cubit<LoginPageState> {
   
   LoginPageCubit(this.authRepository) : super(
     LoginPageState.initial(
-      user: authRepository.dataStoreService.getTempCollectedUserData
+      user: authRepository.getTempCollectedUserData
     ),
   );
 
   Future<void> passwordChanged(String? value) async {
-    AuthDataModel tempUser = authRepository.dataStoreService.getTempCollectedUserData;
+    AuthDataModel tempUser = authRepository.getTempCollectedUserData;
 
     tempUser = tempUser.copyWith(password: value);
     await authRepository.userDataChanged(tempUser);
@@ -28,7 +28,7 @@ class LoginPageCubit extends Cubit<LoginPageState> {
   }
 
   Future<void> userNameChanged(String? value) async {
-    AuthDataModel tempUser = authRepository.dataStoreService.getTempCollectedUserData;
+    AuthDataModel tempUser = authRepository.getTempCollectedUserData;
 
     tempUser = tempUser.copyWith(userName: value);
     await authRepository.userDataChanged(tempUser);
